@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical — музыкальный дистрибутив</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Иконки Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Свои стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+        <div class="container">
+
+            <!-- Логотип -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <span class="logo-mark"><i class="bi bi-soundwave"></i></span>
+                <span class="logo-text">Musical</span>
+            </a>
+
+            <!-- Поле поиска -->
+            <form class="search-box d-none d-lg-flex ms-4" role="search" onsubmit="return false;">
+                <i class="bi bi-search"></i>
+                <input type="search" id="searchInput" class="form-control" placeholder="Поиск артиста, трека, жанра...">
+            </form>
+
+            <!-- Кнопка-бургер -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Меню -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interface">Интерфейс</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalog">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer">Контакты</a></li>
+                    
+                    <!-- Кнопки Вход и Регистрация -->
+                                        <!-- Кнопки Вход и Регистрация -->
+                                        <li class="nav-item mt-3 mt-lg-0 ms-lg-3">
+                                            <div class="d-flex gap-2 flex-column flex-lg-row align-items-lg-center" id="authButtons">
+                                                <!-- Сюда JS вставит либо кнопки входа, либо кнопку выхода -->
+                                                <a href="login.html" class="btn btn-outline-light btn-nav">
+                                                    <i class="bi bi-box-arrow-in-right me-1"></i> Вход
+                                                </a>
+                                                <a href="register.html" class="btn btn-login btn-nav">
+                                                    <i class="bi bi-person-plus me-1"></i> Регистрация
+                                                </a>
+                                            </div>
+                                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- ================= HERO / КАРУСЕЛЬ ================= -->
+    <section id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            
+            <!-- Индикаторы (6 точек) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Слайд 1 -->
+                <div class="carousel-item active">
+                    <div class="slide slide-1">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Музыкальный дистрибутив</span>
+                                    <h1 class="slide-title">Твоя музыка<br>заслуживает мира</h1>
+                                    <p class="slide-text">Загружай треки и попадай на стриминги: Spotify, Apple Music, Яндекс.Музыка и VK Музыка.</p>
+                                    <a href="#catalog" class="btn btn-accent btn-lg">Начать бесплатно</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/hero_purple_room~2.jpg" alt="Студия звукозаписи" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 2 -->
+                <div class="carousel-item">
+                    <div class="slide slide-2">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Прозрачные выплаты</span>
+                                    <h1 class="slide-title">До 100%<br>роялти артисту</h1>
+                                    <p class="slide-text">Никаких скрытых комиссий. Отслеживай статистику и получай выплаты каждый месяц.</p>
+                                    <a href="#interface" class="btn btn-accent btn-lg">Как это работает</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/micro.jpg" alt="Микрофон" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 3 -->
+                <div class="carousel-item">
+                    <div class="slide slide-3">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Для лейблов и артистов</span>
+                                    <h1 class="slide-title">Личный кабинет<br>с аналитикой</h1>
+                                    <p class="slide-text">Все релизы, прослушивания и доходы — в одном удобном интерфейсе.</p>
+                                    <a href="#catalog" class="btn btn-accent btn-lg">Смотреть каталог</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/M.O.L.L.Y..jpg" alt="Концерт" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 4 -->
+                <div class="carousel-item">
+                    <div class="slide slide-1">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Артистам</span>
+                                    <h1 class="slide-title">Твори<br>без границ</h1>
+                                    <p class="slide-text">Мы берем на себя все технические вопросы, чтобы ты мог сосредоточиться на музыке.</p>
+                                    <a href="#interface" class="btn btn-accent btn-lg">Узнать больше</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/Guitar~2.jpg" alt="Гитара" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 5 -->
+                <div class="carousel-item">
+                    <div class="slide slide-2">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Лейблам</span>
+                                    <h1 class="slide-title">Управляй<br>своим лейблом</h1>
+                                    <p class="slide-text">Единая панель для всех ваших артистов, релизов и финансов.</p>
+                                    <a href="#catalog" class="btn btn-accent btn-lg">Попробовать</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/miksher.jpg" alt="Пульт" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 6 -->
+                <div class="carousel-item">
+                    <div class="slide slide-3">
+                        <div class="container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-lg-6 slide-content">
+                                    <span class="slide-badge">Мировые площадки</span>
+                                    <h1 class="slide-title">Твоя музыка<br>во всем мире</h1>
+                                    <p class="slide-text">Мы распространяем контент на более чем 150 стриминговых платформ.</p>
+                                    <a href="#footer" class="btn btn-accent btn-lg">Связаться с нами</a>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block text-center">
+                                    <div class="slide-image-wrapper">
+                                        <img src="img/scene.jpg" alt="Сцена" class="img-fluid slide-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопки навигации (стрелки) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+    <!-- ================= БЕГУЩАЯ СТРОКА ================= -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>Spotify</span> <i class="bi bi-star-fill"></i>
+            <span>Apple Music</span> <i class="bi bi-star-fill"></i>
+            <span>Yandex Music</span> <i class="bi bi-star-fill"></i>
+            <span>VK Music</span> <i class="bi bi-star-fill"></i>
+            <span>SoundCloud</span> <i class="bi bi-star-fill"></i>
+            <span>TikTok</span> <i class="bi bi-star-fill"></i>
+            <!-- Дублируем для бесшовности -->
+            <span>Spotify</span> <i class="bi bi-star-fill"></i>
+            <span>Apple Music</span> <i class="bi bi-star-fill"></i>
+            <span>Yandex Music</span> <i class="bi bi-star-fill"></i>
+            <span>VK Music</span> <i class="bi bi-star-fill"></i>
+            <span>SoundCloud</span> <i class="bi bi-star-fill"></i>
+            <span>TikTok</span> <i class="bi bi-star-fill"></i>
+        </div>
+    </div>
+    <!-- ================= ИНТЕРФЕЙС ================= -->
+    <section id="interface" class="section-dark py-5">
+        <div class="bg-text">MUSIC</div>
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="section-label"></span>
+                <h2 class="section-title">Всё продумано до мелочей</h2>
+                <p class="section-sub">Управляй своей музыкой без лишних сложностей</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="bento-grid">
+                    <!-- Большая карточка -->
+                    <div class="iface-card bento-large">
+                        <div class="iface-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <h4>Загрузка релизов</h4>
+                        <p>Загружайте треки, обложки и метаданные в пару кликов. Наша система автоматически проверит аудио на соответствие стандартам стриминговых площадок.</p>
+                    </div>
+                    <!-- Высокая карточка -->
+                    <div class="iface-card bento-tall">
+                        <div class="iface-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h4>Статистика</h4>
+                        <p>Прослушивания, доходы и география слушателей в реальном времени.</p>
+                    </div>
+                    <!-- Маленькие карточки -->
+                    <div class="iface-card">
+                        <div class="iface-icon"><i class="bi bi-wallet2"></i></div>
+                        <h4>Выплаты</h4>
+                        <p>Вывод средств на карту.</p>
+                    </div>
+                    <div class="iface-card">
+                        <div class="iface-icon"><i class="bi bi-people"></i></div>
+                        <h4>Команда</h4>
+                        <p>Добавляйте соавторов.</p>
+                    </div>
+                    <div class="iface-card bento-wide">
+                        <div class="iface-icon"><i class="bi bi-shield-check"></i></div>
+                        <h4>Защита прав и контента</h4>
+                        <p>Мы берем на себя очистку контента от совпадений (Content ID) и защищаем ваши авторские права на всех платформах.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= КАТАЛОГ ================= -->
+    <section id="catalog" class="section-light py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="section-label">Каталог</span>
+                <h2 class="section-title">Свежие релизы</h2>
+                <p class="section-sub">Популярные треки наших артистов</p>
+            </div>
+
+            <div class="row g-4" id="catalogGrid">
+                <!-- Карточка 1 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 catalog-item" data-title="neon dreams synthwave">
+                    <div class="release-card">
+                        <div class="release-cover cover-1"><i class="bi bi-vinyl"></i></div>
+                        <div class="release-body">
+                            <h5>Luv sick pt. 5</h5>
+                            <p class="release-artist">Nujabes</p>
+                            <span class="release-tag">Rap trigger</span>
+                        </div>
+                        <button class="release-play"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 catalog-item" data-title="deep bass techno">
+                    <div class="release-card">
+                        <div class="release-cover cover-2"><i class="bi bi-speaker"></i></div>
+                        <div class="release-body">
+                            <h5>Lover Girl</h5>
+                            <p class="release-artist">Laufey</p>
+                            <span class="release-tag">Jazz</span>
+                        </div>
+                        <button class="release-play"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 catalog-item" data-title="sunrise indie pop">
+                    <div class="release-card">
+                        <div class="release-cover cover-3"><i class="bi bi-sun"></i></div>
+                        <div class="release-body">
+                            <h5>Not Allowed</h5>
+                            <p class="release-artist">TV Girl</p>
+                            <span class="release-tag">Indie Pop</span>
+                        </div>
+                        <button class="release-play"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="col-xl-3 col-lg-4 col-md-6 catalog-item" data-title="midnight jazz soul">
+                    <div class="release-card">
+                        <div class="release-cover cover-4"><i class="bi bi-moon-stars"></i></div>
+                        <div class="release-body">
+                            <h5>Это не любовь</h5>
+                            <p class="release-artist">В. Цой</p>
+                            <span class="release-tag">Punk Rock</span>
+                        </div>
+                        <button class="release-play"><i class="bi bi-play-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+            <p id="noResults" class="text-center text-muted mt-4 d-none">Ничего не найдено 😔</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer" class="site-footer">
+    <div class="container">
+        <!-- Хлебные крошки -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb breadcrumb-dark mb-0">
+                <li class="breadcrumb-item"><a href="#home">Главная</a></li>
+                <li class="breadcrumb-item"><a href="#interface">Интерфейс</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <a class="footer-brand d-flex align-items-center gap-2 mb-3" href="#home">
+                    <span class="logo-mark"><i class="bi bi-soundwave"></i></span>
+                    <span class="logo-text">Musical</span>
+                </a>
+                <p class="footer-text">Музыкальный дистрибутив нового поколения. Помогаем артистам и лейблам доносить музыку до слушателей по всему миру.</p>
+                <ul class="footer-contacts">
+                    <li><i class="bi bi-geo-alt-fill"></i> г. Улан-Удэ, ул. Ленина, 10</li>
+                    <li><i class="bi bi-telephone-fill"></i> +7 (996) 935-42-64</li>
+                    <li><i class="bi bi-envelope-fill"></i> latkinmaksim063@gmail.com</li>
+                </ul>
+                <div class="footer-socials">
+                    <!-- MAX -->
+                    <a href="#" title="MAX" aria-label="MAX" style="font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: -0.5px;">
+                        MAX
+                    </a>
+                    <!-- ВКонтакте -->
+                    <a href="#" title="ВКонтакте" aria-label="ВКонтакте">
+                        <i class="bi bi-vk"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h6 class="footer-title">Навигация</h6>
+                <ul class="footer-links">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#interface">Интерфейс</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#footer">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4">
+                <h6 class="footer-title">Мы на карте</h6>
+                <div class="ratio ratio-4x3 rounded-3 overflow-hidden map-frame">
+                    <iframe src="https://yandex.ru/map-widget/v1/?text=Улан-Удэ%2C%20улица%20Ленина%2C%2010&z=15"
+                            frameborder="0" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+            <span>© 2026 Musical. Все права защищены.</span>
+            <span>Сделано с <i class="bi bi-heart-fill text-danger"></i> для музыкантов</span>
+        </div>
+    </div>
+</footer>
+<!-- Плавающий плеер -->
+<div id="floatingPlayer" class="floating-player">
+    <div class="player-info">
+        <div class="player-cover">
+            <div class="equalizer">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <div>
+            <div class="player-title" id="playerTitle">Название трека</div>
+            <div class="player-artist" id="playerArtist">Артист</div>
+        </div>
+    </div>
+    <div class="player-controls">
+        <button class="player-btn"><i class="bi bi-play-fill fs-4"></i></button>
+        <button class="player-close" id="closePlayer"><i class="bi bi-x-lg"></i></button>
+    </div>
+</div>
+
+<!-- Кнопка "Наверх" -->
+<button id="scrollTopBtn" class="scroll-top-btn"><i class="bi bi-arrow-up"></i></button>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Свой JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
